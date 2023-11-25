@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonEventArg : MonoBehaviour
+public class BuildingUIManager : MonoBehaviour
 {
+
     
 }

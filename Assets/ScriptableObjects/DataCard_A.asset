@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: DataCard_A
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectData
+  <Name>k__BackingField: A
+  <Id>k__BackingField: 1
+  <goldCost>k__BackingField: 1
+  <gemCost>k__BackingField: 1
+  <buildingArts>k__BackingField: {fileID: 21300000, guid: 77a7c4c6e63164f509bb80836bc12f0a, type: 3}
+  <Size>k__BackingField: {x: 1, y: 1}
+  <Prefab>k__BackingField: {fileID: 1468731361831464924, guid: be34bce9bc72340548cfce4ecc46c592, type: 3}
