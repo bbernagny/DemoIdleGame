@@ -8,9 +8,6 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int _width, _height;
     [SerializeField] private GameObject _tilePrefab;
     [SerializeField] private Transform _cam;
-    //public Transform parentTransform;
-    private int _id;
-
 
 
     private void Start()
@@ -25,11 +22,6 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < _height; y++)
             {
                 GameObject spawnedTile = Instantiate(_tilePrefab, new Vector3(x, y), Quaternion.identity);
-                //spawnedTile.transform.SetParent(parentTransform, false);
-               
-
-                //TileID tileID = spawnedTile.GetComponent<TileID>();
-                //tileID.Id = ++_id;
             }
         }
 

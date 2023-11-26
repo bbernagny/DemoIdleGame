@@ -32,4 +32,33 @@ public class ButtonEventArg : MonoBehaviour
         _cardImage.sprite = _data.buildingArts;
     }
 
+    private void Update()
+    {
+        _purchasable = GameManager.Instance.GetGemCoin >= _data.gemCost |
+            GameManager.Instance.GetGoldCoin >= _data.goldCost;
+
+        _button.interactable = _purchasable && !PlacementManager.Instance.IsSelected;
+
+        ChangeTextMeshColor();
+    }
+
+    private void ChangeTextMeshColor()
+    {
+        if (GameManager.Instance.GetGemCoin >= _data.gemCost)
+        {
+            gemCostText.color = Color.green;
+        }
+        else
+        {
+            gemCostText.color = Color.red;
+        }
+        if (GameManager.Instance.GetGoldCoin >= _data.goldCost)
+        {
+            goldCostText.color = Color.green;
+        }
+        else
+        {
+            goldCostText.color = Color.red;
+        }
+    }
 }

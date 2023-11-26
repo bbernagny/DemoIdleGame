@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -10,6 +12,20 @@ public class InputManager : MonoBehaviour
     
 
     private Vector3 lastPosition;
+
+    public event Action OnClicked, OnExit; //eklendi
+
+
+    public void Update() //eklendi
+    {
+        if (Input.GetMouseButtonDown(0))
+            OnClicked?.Invoke();
+        if (Input.GetKeyDown(KeyCode.Escape))
+            OnExit?.Invoke();
+    }
+
+    public bool IsPointerOverUI() // eklendi
+        => EventSystem.current.IsPointerOverGameObject();
 
     public Vector3 GetSelectedMapPos()
     {
@@ -21,9 +37,6 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log(raycastHit.collider.name);
             lastPosition = raycastHit.point;
-
-            //TileID tileID = raycastHit.collider.GetComponent<TileID>();
-            //Debug.Log(tileID.Id);
         }
         
 
