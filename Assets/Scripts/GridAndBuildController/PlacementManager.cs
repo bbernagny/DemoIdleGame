@@ -189,6 +189,10 @@ public class PlacementManager : MonoBehaviour
         // Eğer placedObject null değilse destroy et
         if (placedObject != null)
         {
+            GridData selectedData = objDatabase.objectData[selectedObjectIndex].Id == 0 ? gridData : itemData;
+
+            selectedData.RemoveObject(grid.WorldToCell(placedObject.transform.position), objDatabase.objectData[selectedObjectIndex].Size);
+
             Destroy(placedObject);
             placedGameObject.Remove(placedObject);
         }

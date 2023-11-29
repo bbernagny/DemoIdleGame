@@ -21,7 +21,7 @@ public class GridData : MonoBehaviour
 
     private List<Vector3Int> CalculatePosition(Vector3Int gridPosition, Vector2Int objectSize)
     {
-        List<Vector3Int> returnVal = new();
+        List<Vector3Int> returnVal = new List<Vector3Int>();
         for (int x = 0; x < objectSize.x; x++)
         {
             for (int y = 0; y < objectSize.y; y++)
@@ -41,6 +41,18 @@ public class GridData : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    public void RemoveObject(Vector3Int gridPosition, Vector2Int objectSize)
+    {
+        List<Vector3Int> positionOccupy = CalculatePosition(gridPosition, objectSize);
+        foreach (var pos in positionOccupy)
+        {
+            if (placedObjects.ContainsKey(pos))
+            {
+                placedObjects.Remove(pos);
+            }
+        }
     }
 }
 
