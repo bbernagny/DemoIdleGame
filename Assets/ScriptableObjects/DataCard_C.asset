@@ -18,7 +18,7 @@ MonoBehaviour:
   <gemCost>k__BackingField: 3
   <buildingArts>k__BackingField: {fileID: 21300000, guid: 112d25e719e3643c7ab2c5c382b2346c, type: 3}
   <Size>k__BackingField: {x: 2, y: 2}
-  <Prefab>k__BackingField: {fileID: 1241603966063911417, guid: 7cc280ad2817842aa8a21aafc8e20ae8, type: 3}
+  <Prefab>k__BackingField: {fileID: 3828872885799860776, guid: a12ea5d5a67a64a1b8ac0accc5a8f5ec, type: 3}
   <generatedGold>k__BackingField: 3
   <generatedGem>k__BackingField: 3
   <productionTime>k__BackingField: 10
