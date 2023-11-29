@@ -13,10 +13,10 @@ public class InputManager : MonoBehaviour
 
     private Vector3 lastPosition;
 
-    public event Action OnClicked, OnExit; //eklendi
+    public event Action OnClicked, OnExit; 
 
 
-    public void Update() //eklendi
+    public void Update() 
     {
         if (Input.GetMouseButtonDown(0))
             OnClicked?.Invoke();
@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
             OnExit?.Invoke();
     }
 
-    public bool IsPointerOverUI() // eklendi
+    public bool IsPointerOverUI() 
         => EventSystem.current.IsPointerOverGameObject();
 
     public Vector3 GetSelectedMapPos()
@@ -35,7 +35,6 @@ public class InputManager : MonoBehaviour
 
         if (raycastHit.collider != null)
         {
-            Debug.Log(raycastHit.collider.name);
             lastPosition = raycastHit.point;
         }
         

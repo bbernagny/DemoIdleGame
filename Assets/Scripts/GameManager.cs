@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     public int GetGoldCoin { get { return _goldCoin; } set { _goldCoin = value; } }
 
 
+
     public void Start()
     {
         _goldCoin = _startingGoldCoin;
@@ -52,9 +54,12 @@ public class GameManager : MonoBehaviour
         
     }
 
-   
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
-   
+
 
 
 }

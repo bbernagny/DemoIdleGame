@@ -19,3 +19,6 @@ MonoBehaviour:
   <buildingArts>k__BackingField: {fileID: 21300000, guid: 77a7c4c6e63164f509bb80836bc12f0a, type: 3}
   <Size>k__BackingField: {x: 1, y: 1}
   <Prefab>k__BackingField: {fileID: 1468731361831464924, guid: be34bce9bc72340548cfce4ecc46c592, type: 3}
+  <generatedGold>k__BackingField: 1
+  <generatedGem>k__BackingField: 1
+  <productionTime>k__BackingField: 5

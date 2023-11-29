@@ -21,9 +21,32 @@ public class ObjectData : ScriptableObject
     public Sprite buildingArts { get; private set; }
 
     [field: SerializeField]
-    public Vector2Int Size { get; private set; } = Vector2Int.one;
+    public Vector2Int Size { get; private set; }
 
     [field: SerializeField]
     public GameObject Prefab { get; private set; }
 
+
+    [field: SerializeField]
+    public int generatedGold { get; private set; }
+
+    [field: SerializeField]
+    public int generatedGem { get; private set; }
+
+    [field: SerializeField]
+    public float productionTime { get; private set; }
+
+
+    public void GenerateGoldAndGem(float duration, ref float timer)
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= duration)
+        {
+            GameManager.Instance.GetGemCoin += generatedGem;
+            GameManager.Instance.GetGoldCoin += generatedGold;
+            timer = 0;
+        }
+    }
 }
+
