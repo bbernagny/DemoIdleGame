@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public int GetGemCoin { get { return _gemCoin; } set { _gemCoin = value; } }
     public int GetGoldCoin { get { return _goldCoin; } set { _goldCoin = value; } }
 
+    Dictionary<GameObject, Vector2Int> spawnedObjectData = new Dictionary<GameObject, Vector2Int>(); 
 
 
     public void Start()
@@ -50,16 +51,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(objectDatabase.GetData(1).Name);
         _goldCoinText.SetText(_goldCoin.ToString());
-        _gemText.SetText(_gemCoin.ToString());
-        
+        _gemText.SetText(_gemCoin.ToString()); 
     }
 
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ResetGameState();
     }
 
-
+    public void ResetGameState()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
 
 }

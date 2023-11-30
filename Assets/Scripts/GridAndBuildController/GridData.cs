@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GridData : MonoBehaviour
 {
-    Dictionary<Vector3Int, PlacementData> placedObjects = new();
+    Dictionary<Vector3Int, PlacementData> placedObjects = new Dictionary<Vector3Int, PlacementData>();
 
     public void AddObject(Vector3Int gridPosition, Vector2Int objectSize, int ID, int placedObjectIndex)
     {
@@ -14,7 +14,7 @@ public class GridData : MonoBehaviour
         foreach (var pos in positionOccupy)
         {
             if (placedObjects.ContainsKey(pos))
-                throw new Exception($"Dictinonary already contains this cell position {pos}");
+                throw new Exception($"already contains this cell position {pos}");
             placedObjects[pos] = data;
         }
     }

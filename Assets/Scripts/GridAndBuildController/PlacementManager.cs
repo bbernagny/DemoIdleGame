@@ -24,9 +24,7 @@ public class PlacementManager : MonoBehaviour
     }
 
     [SerializeField] private GameObject mouseIndicator, cellIndicator;
-
     [SerializeField] private InputManager inputManager;
-
     [SerializeField] private Grid grid;
 
     [SerializeField] private ObjectDatabase objDatabase;
@@ -49,7 +47,7 @@ public class PlacementManager : MonoBehaviour
 
     [SerializeField] private List<ButtonEventArg> _cardButtonList = new List<ButtonEventArg>();
 
-
+    Dictionary<GameObject, Vector3Int> spawnedObjectData = new Dictionary<GameObject, Vector3Int>();
 
     private void Start()
     {
@@ -68,8 +66,7 @@ public class PlacementManager : MonoBehaviour
 
     private void Update()
     {
-        SetIndicators();
-       
+        SetIndicators(); 
     }
 
     public void StartPlacement(int Id)
@@ -105,8 +102,9 @@ public class PlacementManager : MonoBehaviour
             placedObject.transform.position = grid.CellToWorld(gridPosition);
             
             GridData selectedData = objDatabase.objectData[selectedObjectIndex].Id == 0 ? gridData : itemData;
-            selectedData.AddObject(gridPosition, objDatabase.objectData[selectedObjectIndex].Size, objDatabase.objectData[selectedObjectIndex].Id, placedGameObject.Count - 1);
- 
+            selectedData.AddObject(gridPosition, objDatabase.objectData[selectedObjectIndex].Size,
+                objDatabase.objectData[selectedObjectIndex].Id, placedGameObject.Count - 1);
+
             _confirmationMenu.SetActive(true);
             IsSelected = false;
         }
@@ -137,7 +135,6 @@ public class PlacementManager : MonoBehaviour
 
         bool placementValidity = CheckPlacement(gridPosition, selectedObjectIndex);
         previewRenderer.material.color = placementValidity ? Color.green : Color.red;
-        
 
         mouseIndicator.transform.position = mousePosition;
         cellIndicator.transform.position = grid.CellToWorld(gridPosition);
@@ -151,8 +148,7 @@ public class PlacementManager : MonoBehaviour
             _isSelectedID = id;
         }
         _confirmationButton.onClick.RemoveAllListeners();
-        _confirmationButton.onClick.AddListener(() => PurchaseBuilding(id));
-        
+        _confirmationButton.onClick.AddListener(() => PurchaseBuilding(id));  
     }
 
     public void PurchaseBuilding(int id)
@@ -171,7 +167,6 @@ public class PlacementManager : MonoBehaviour
             if (building != null)
             {
                 building.objectData = objDatabase.GetData(id);
-
             }
 
             _isSelectedID = 0;
@@ -186,7 +181,6 @@ public class PlacementManager : MonoBehaviour
         _isSelectedID = 0;
         _confirmationMenu.SetActive(false);
 
-        // Eğer placedObject null değilse destroy et
         if (placedObject != null)
         {
             GridData selectedData = objDatabase.objectData[selectedObjectIndex].Id == 0 ? gridData : itemData;

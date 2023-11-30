@@ -21,8 +21,7 @@ public class ObjectDatabase : ScriptableObject
             {
                 _objData.Add(objData.Id, objData);
             }
-        }
-        
+        }  
     }
 
     public ObjectData GetData(int id)
@@ -33,6 +32,5 @@ public class ObjectDatabase : ScriptableObject
         }
         return null;
     }
-
 }
 

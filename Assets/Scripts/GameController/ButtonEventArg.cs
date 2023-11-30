@@ -13,16 +13,16 @@ public class ButtonEventArg : MonoBehaviour
     [SerializeField] private Image _cardImage;
     [SerializeField] private ObjectData _data;
 
-
     private Button _button;
     private bool _purchasable;
+
     public event Action<int> OnButtonClickEvent;
+
     public bool GetPurchasable { get { return _purchasable; } }
     public int GetID { get { return _data.Id; } }
 
     private void Start()
     {
-        
         _button = GetComponent<Button>();
 
         _button.onClick.AddListener(() => OnButtonClickEvent.Invoke(_data.Id));

@@ -10,7 +10,6 @@ public class InputManager : MonoBehaviour
     [SerializeField] private Camera sceneCamera;
     [SerializeField] private LayerMask placementLayerMask;
     
-
     private Vector3 lastPosition;
 
     public event Action OnClicked, OnExit; 
@@ -38,7 +37,6 @@ public class InputManager : MonoBehaviour
             lastPosition = raycastHit.point;
         }
         
-
         return lastPosition;
     }
 }
