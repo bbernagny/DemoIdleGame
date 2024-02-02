@@ -1,9 +1,5 @@
 # DemoIdleGame
 
-Hello, the reason for the delay in my demo project is that I am working in a busy job, although it is temporary. For this reason, I would like to state that I had to exceed the given time.
-
-The most challenging part for me while doing the project was the components of the grid systems and ensuring they worked correctly. Due to the errors I received at some points, I had to change some points that were requested.
-
 #Images From Demo
 
 ![Screenshot 2023-11-30 at 15 30 23](https://github.com/bbernagny/DemoIdleGame/assets/76526742/6449df4e-c346-4586-9c84-4f9e124e7b2c)
